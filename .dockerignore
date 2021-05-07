@@ -1,0 +1,10 @@
+.git
+.vscode
+.dockerignore
+.gitignore
+.gitlab-ci.yml
+CHANGELOG.md
+CONTRIBUTING.md
+Dockerfile
+README.md
+tag.sh

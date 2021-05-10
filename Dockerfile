@@ -15,8 +15,6 @@ RUN mvn package -Dmaven.test.skip -Declipselink.weave.skip
 ADD src src
 RUN mvn package -Dmaven.test.skip
 
-RUN echo "done!"
-
 # 2nd stage, build the runtime image
 FROM openjdk:11-jre-slim
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package eu.miaplatform.helidon;
+package eu.miaplatform.helidonHelloWorld;
 
 import java.util.concurrent.TimeUnit;
 

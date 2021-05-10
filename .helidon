@@ -10,5 +10,5 @@ project.directory=/home/chiara/lab/Helidon-Hello-World-Example
 schema.version=1.1.0
 project.resourcedirs=/home/chiara/lab/Helidon-Hello-World-Example/src/main/resources\:\:
 helidon.version=2.2.1
-project.mainclass=eu.miaplatform.helidon.Main
+project.mainclass=eu.miaplatform.helidonHelloWorld.Main
 project.source.includes=

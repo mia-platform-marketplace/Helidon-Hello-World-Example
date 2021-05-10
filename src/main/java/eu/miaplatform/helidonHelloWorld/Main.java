@@ -117,7 +117,7 @@ public final class Main {
                 return Routing.builder()
                         .register(health)                   // Health at "/-/healthz"
                         .register(metrics)                  // Metrics at "/-/metrics"
-                        .register(readiness)                // Metrics at "/-/ready"
+                        .register(readiness)                // Readiness at "/-/ready"
                         .register("/hello", helloWorldService)
                         .build();
         }

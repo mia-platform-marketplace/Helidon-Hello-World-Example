@@ -83,7 +83,7 @@ public final class Main {
                         .exceptionally(t -> {
                                 logger.log(Level.SEVERE, "Startup failed: " + t.getMessage());
                                 t.printStackTrace(System.err);
-                        return null;
+                                return null;
                         });
 
                 // Server threads are not daemon. No need to block. Just react.

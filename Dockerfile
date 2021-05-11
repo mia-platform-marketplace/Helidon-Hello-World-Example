@@ -1,4 +1,3 @@
-
 # 1st stage, build the app
 FROM maven:3.6-jdk-11 as build
 

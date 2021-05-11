@@ -2,6 +2,7 @@
 .vscode
 .idea
 .helidon
+.settings
 .dockerignore
 .gitignore
 .gitlab-ci.yml

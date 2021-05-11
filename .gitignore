@@ -1,5 +1,7 @@
 .vscode
 .classpath
+.idea
+.helidon
 
 ### Maven ###
 target/

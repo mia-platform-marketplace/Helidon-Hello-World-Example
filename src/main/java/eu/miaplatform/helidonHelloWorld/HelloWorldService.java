@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 import javax.json.Json;
 import javax.json.JsonObject;
 
+import eu.miaplatform.helidonHelloWorld.helpers.LoggerFormatter;
 import io.helidon.config.Config;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerRequest;

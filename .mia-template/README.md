@@ -67,6 +67,7 @@ The following routes are exposed
 - [http://localhost:3000/hello]() - hello controller
 - [http://localhost:3000/-/ready]() - the service is ready (used by k8s)
 - [http://localhost:3000/-/healthz]() - the service is healthy (used by k8s)
+- [http://localhost:3000/documentation/json]() - the Open API 3 specification: default schema is in yaml, a client can specify Accept: as either application/vnd.oai.openapi+json or application/json to request JSON.
 
 ### Tag new project version
 

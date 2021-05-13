@@ -126,7 +126,7 @@ public final class Main {
                         .register(metrics)                  // Metrics at "/-/metrics"
                         .register(readiness)                // Readiness at "/-/ready"
                         .register("/hello", helloWorldService)
-                        .register(openapi)                  // Readiness at "/documentation/json"
+                        .register(openapi)                  // Openapi documentation at "/documentation/json"
                         .build();
         }
 }

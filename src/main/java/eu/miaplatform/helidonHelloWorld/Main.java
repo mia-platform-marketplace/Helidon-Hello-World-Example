@@ -21,12 +21,14 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import eu.miaplatform.helidonHelloWorld.helpers.LoggerFormatter;
 import io.helidon.common.LogConfig;
 import io.helidon.config.Config;
 import io.helidon.health.HealthSupport;
 import io.helidon.health.checks.HealthChecks;
 import io.helidon.media.jsonp.JsonpSupport;
 import io.helidon.metrics.MetricsSupport;
+import io.helidon.openapi.OpenAPISupport;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.WebServer;
 
@@ -114,11 +116,17 @@ public final class Main {
                         .webContext("/-/ready")
                         .build();
 
+                OpenAPISupport openapi = OpenAPISupport.builder()
+                        .config(config)
+                        .webContext("/documentation/json")
+                        .build();
+
                 return Routing.builder()
                         .register(health)                   // Health at "/-/healthz"
                         .register(metrics)                  // Metrics at "/-/metrics"
                         .register(readiness)                // Readiness at "/-/ready"
                         .register("/hello", helloWorldService)
+                        .register(openapi)                  // Openapi documentation at "/documentation/json"
                         .build();
         }
 }

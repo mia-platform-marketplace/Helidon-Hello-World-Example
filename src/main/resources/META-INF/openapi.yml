@@ -1,0 +1,89 @@
+paths:
+  /hello:
+    get:
+      summary: Returns a generic greeting
+      description: Greeting to the user
+      parameters:
+        - in: path
+          description: Name to be greeted
+          name: name
+          schema:
+            type: string
+          required: false
+      responses:
+        200: 
+          description: Simple JSON containing the greeting
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/GreetingMessage'
+  /-/healthz:
+    get:
+      summary: Health Kubernetes probe route
+      responses:
+        200: 
+          description: OK
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/HealthResponse'
+  /-/ready:
+    get:
+      summary: Readiness Kubernetes probe route
+      responses:
+        200: 
+          description: OK
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/HealthResponse'
+
+components:
+  schemas: 
+    GreetingMessage:
+      type: object
+      properties: 
+        message: 
+          type: string
+    HealthResponse:
+      type: object
+      properties:
+        outcome:
+          type: string
+        status:
+          type: string
+        checks:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              state:
+                type: string
+              status:
+                type: string
+              data:
+                type: object
+                properties:
+                  free:
+                    type: string
+                  freeBytes:
+                    type: integer
+                  max:
+                    type: string
+                  maxBytes:
+                    type: integer
+                  percentFree:
+                    type: string
+                  total:
+                    type: string
+                  totalBytes:
+                    type: integer
+            required:
+              - name
+              - state
+              - status
+
+
+

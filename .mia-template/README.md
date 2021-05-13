@@ -67,7 +67,9 @@ The following routes are exposed
 - [http://localhost:3000/hello]() - hello controller
 - [http://localhost:3000/-/ready]() - the service is ready (used by k8s)
 - [http://localhost:3000/-/healthz]() - the service is healthy (used by k8s)
+- [http://localhost:3000/documentation/json]() - the Open API 3 specification: default schema is in yaml, a client can specify Accept: as either application/vnd.oai.openapi+json or application/json to request JSON.
 
+The Open API documentation exposed by the service can be statically expanded by modifying the configuration file `META-INF/openapi.yml`. 
 ### Tag new project version
 
 Please use the `tag.sh` to update the `pom.xml` project version and commit release to git.

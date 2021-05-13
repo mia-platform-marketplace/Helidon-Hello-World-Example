@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package eu.miaplatform.helidonHelloWorld;
+package eu.miaplatform.helidonHelloWorld.helpers;
 
 import java.util.logging.Formatter;
 import java.util.logging.Level;

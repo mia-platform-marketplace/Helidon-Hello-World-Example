@@ -16,7 +16,10 @@ paths:
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/GreetingMessage'
+                type: object
+                properties: 
+                  message: 
+                    type: string
   /-/healthz:
     get:
       summary: Health Kubernetes probe route
@@ -26,7 +29,44 @@ paths:
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/HealthResponse'
+                type: object
+                properties:
+                  outcome:
+                    type: string
+                  status:
+                    type: string
+                  checks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        state:
+                          type: string
+                        status:
+                          type: string
+                        data:
+                          type: object
+                          properties:
+                            free:
+                              type: string
+                            freeBytes:
+                              type: integer
+                            max:
+                              type: string
+                            maxBytes:
+                              type: integer
+                            percentFree:
+                              type: string
+                            total:
+                              type: string
+                            totalBytes:
+                              type: integer
+                      required:
+                        - name
+                        - state
+                        - status
   /-/ready:
     get:
       summary: Readiness Kubernetes probe route
@@ -36,54 +76,44 @@ paths:
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/HealthResponse'
-
-components:
-  schemas: 
-    GreetingMessage:
-      type: object
-      properties: 
-        message: 
-          type: string
-    HealthResponse:
-      type: object
-      properties:
-        outcome:
-          type: string
-        status:
-          type: string
-        checks:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              state:
-                type: string
-              status:
-                type: string
-              data:
                 type: object
                 properties:
-                  free:
+                  outcome:
                     type: string
-                  freeBytes:
-                    type: integer
-                  max:
+                  status:
                     type: string
-                  maxBytes:
-                    type: integer
-                  percentFree:
-                    type: string
-                  total:
-                    type: string
-                  totalBytes:
-                    type: integer
-            required:
-              - name
-              - state
-              - status
+                  checks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        state:
+                          type: string
+                        status:
+                          type: string
+                        data:
+                          type: object
+                          properties:
+                            free:
+                              type: string
+                            freeBytes:
+                              type: integer
+                            max:
+                              type: string
+                            maxBytes:
+                              type: integer
+                            percentFree:
+                              type: string
+                            total:
+                              type: string
+                            totalBytes:
+                              type: integer
+                      required:
+                        - name
+                        - state
+                        - status
 
 
 

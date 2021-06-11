@@ -1,6 +1,7 @@
 server:
-  port: 3000
   host: 0.0.0.0
+
+HTTP_PORT: 3000
 
 app:
   name: "World"

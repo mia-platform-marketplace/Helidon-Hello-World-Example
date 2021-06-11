@@ -71,6 +71,7 @@ public final class Main {
                 // Build server with JSONP support
                 WebServer server = WebServer.builder(createRouting(config))
                         .config(config.get("server"))
+                        .port(config.get("HTTP_PORT").asInt().get())
                         .addMediaSupport(JsonpSupport.create())
                         .build();
 

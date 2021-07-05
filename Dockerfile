@@ -32,8 +32,8 @@ ARG BUILD_FILE_NAME=mia_template_service_name_placeholder
 RUN echo "service-name: ${COMMIT_SHA}" >> ./commit.sha
 
 # Copy the binary built in the 1st stage
-COPY --from=build ./target/${BUILD_FILE_NAME}.jar ./application.jar
-COPY --from=build ./target/libs ./libs
+COPY --from=build build/target/${BUILD_FILE_NAME}.jar ./application.jar
+COPY --from=build build/target/libs ./libs
 
 USER 1000
 

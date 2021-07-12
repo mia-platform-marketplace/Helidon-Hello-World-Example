@@ -43,7 +43,7 @@ docker build -t helidon-example .
 Start the application:
 
 ```
-docker run --rm -e server.port=8080 -p 8080:8080 helidon-example:latest
+docker run --rm -e HTTP_PORT=8080 -p 8080:8080 helidon-example:latest
 ```
 
 ### Build Native Docker Image
@@ -57,7 +57,7 @@ docker build -t helidon-example-native -f Dockerfile.native .
 Start the application:
 
 ```
-docker run --rm -e server.port=8080 -p 8080:8080 helidon-example-native:latest
+docker run --rm -e HTTP_PORT=8080 -p 8080:8080 helidon-example-native:latest
 ```
 
 ### Routes

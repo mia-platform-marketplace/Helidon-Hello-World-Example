@@ -27,30 +27,17 @@ By running autocannon on the `/hello` route, we obtain the following performance
 Running 10s test @ http://localhost:3000/hello
 10 connections
 
-|Stat|Image|2.5%|50%|97.5%|99%|Avg|Stdev|Max|
-|----|-----|----|---|-----|---|---|-----|---|
-|Latency|Non-native|51 [ms]|95 [ms]|379 [ms]|543 [ms]|109.82 [ms]|87.04 [ms]|823 [ms]|
-| |Native|47 [ms]|57 [ms]|71 [ms]|94 [ms]|<span style="color:green">58.12 [ms]</span>|11.61 [ms]|214 [ms]|
-<br />
+#### Average Latency
+`Non-native` image has `109.82 ms` average latency, while `native` image has `58.12 ms` average latency.
 
-|Stat|Image|1%|2.5%|50%|97.5%|Avg|Stdev|Min|
-|----|-----|--|----|---|-----|---|-----|---|
-|Req/Sec|Non-native|24|24|100|133|90.4|32.76|24|
-| |Native|151|151|172|175|<span style="color:green">170.2</span>|6.73|151|
-|Bytes/Sec|Non-native|3.79 [kB]|3.79 [kB]|15.8 [kB]|21 [kB]|14.3 [kB]|5.18 [kB]|3.79 [kB]|
-| |Native|23.9 [kB]|23.9 [kB]|27.2 [kB]|27.7 [kB]|<span style="color:green">26.9 [kB]</span>|1.06 [kB]|23.9 [kB]|
-<br />
+#### Average Req/Sec
+`Non-native` image handles `90.4 req/sec` on average, while `native` image handles `170.2 req/sec` on average.
 
-Non-native image: 904 requests in 10.05s, 143 kB read
-<br />
-Native image: <span style="color:green">2k requests</span> in 10.03s, 269 kB read
+#### Average Bytes/Sec
+`Non-native` image handles `14.3 bytes/sec` on average, while `native` image handles `26.9 bytes/sec` on average.
 
-with the following consumption of resources:
-| |CPU|Memory|
-|-|---|------|
-|Non-native|66 [mCPU]|75 [Mi]|
-|Native|5 [mCPU]|32 [Mi]|
-<br />
+#### Total handled requests
+`Non-native` image handles `904 request` in 10.05s consuming `66 mCPU` and `75 Mi` of memory, while `native` image handles `2k requests` in 10.03s consuming `5 mCPU` and `32 Mi` of memory.
 
 Therefore, the native image attends about twice the number of requests while consuming much less memory and cpu and having lower latency.
 

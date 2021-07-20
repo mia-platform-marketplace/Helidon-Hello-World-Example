@@ -16,12 +16,9 @@
 
 package eu.miaplatform.helidonHelloWorld;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import eu.miaplatform.helidonHelloWorld.helpers.LoggerFormatter;
 import io.helidon.common.LogConfig;
 import io.helidon.config.Config;
 import io.helidon.health.HealthSupport;
@@ -50,10 +47,6 @@ public final class Main {
          * @param args command line arguments.
          */
         public static void main(final String[] args) {
-                Handler handler = new ConsoleHandler();
-                handler.setFormatter(new LoggerFormatter());
-                logger.addHandler(handler);
-
                 startServer();
         }
 

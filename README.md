@@ -3,6 +3,8 @@
 
 [![Build Status][github-actions-svg]][github-actions]
 
+> ⚠️ Warning: This repository is no longer maintained.
+
 This walkthrough will explain you how to correctly create a microservice in Helidon that returns an hello message from the DevOps Console.
 
 ## Create a microservice
